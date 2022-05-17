@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&family=Karla:wght@700&display=swap');
+
+:root {
+
+    /* ### Primary */
+
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    /*  Neutral */
+    /* paragraphs */
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+
+    /* background, headings, buttons */
+    --Very-light-gray: hsl(0, 0%, 95%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 1440px;
+    font-family: 'Karla', sans-serif;
+}
+
+.content {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.main {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    width: 1300px;
+    height: 800px;
+
+
+
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+
+
+img {
+    width: 100px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: 'Big Shoulders Display', cursive;
+    color: white;
+}
+
+p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.767);
+    margin-top: -40px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    width: 14rem;
+    height: 4rem;
+    border-radius: 60px 60px 60px 60px / 30px 30px 30px 30px;
+    font-size: 1.2rem;
+
+}
+
+.sedans .button button {
+    color: var(--Bright-orange)
+}
+
+.suvs .button button {
+    color: var(--Dark-cyan);
+
+}
+
+.luxury .button button {
+    color: var(--Very-dark-cyan)
+}
+
+article.sedans {
+    background-color: var(--Bright-orange);
+    border-radius: 10px 0px 0px 10px
+}
+
+article.suvs {
+    background-color: var(--Dark-cyan);
+}
+
+article.luxury {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0px 10px 10px 0px
+}
+
+@media screen and (max-width:900px) {
+    body {
+        min-height: 100vh;
+        min-width: 100%;
+        font-family: 'Karla', sans-serif;
+    }
+
+    .main {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        width: calc(1300px/3);
+        height: calc(800px*3);
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 60px;
+        height: 800px;
+    }
+
+    article.sedans {
+        background-color: var(--Bright-orange);
+        border-radius: 10px 10px 0px 0px
+    }
+    
+
+    
+    article.luxury {
+        background-color: var(--Very-dark-cyan);
+        border-radius: 0px 0px 10px 10px
+    }
+}
